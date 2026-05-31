@@ -1,33 +1,79 @@
 body{
-font-family:Arial;
-background:#f4f4f4;
-padding:20px;
+    margin:0;
+    font-family:'Segoe UI',sans-serif;
+    background:#f4f7fa;
+}
+
+header{
+    background:#0b3d91;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+nav{
+    background:#062a66;
+    padding:15px;
+    text-align:center;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin:15px;
+}
+
+.hero{
+    background:url('images/banner.jpg');
+    background-size:cover;
+    background-position:center;
+    height:350px;
+    color:white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:40px;
+    font-weight:bold;
 }
 
 .container{
-background:white;
-padding:20px;
-border-radius:10px;
-max-width:900px;
-margin:auto;
+    width:90%;
+    margin:auto;
+    margin-top:20px;
 }
 
 textarea{
-width:100%;
-height:200px;
-font-size:16px;
-padding:10px;
+    width:100%;
+    height:200px;
+    padding:10px;
+    font-size:16px;
 }
 
 button{
-margin-top:10px;
-padding:12px 20px;
-font-size:18px;
-cursor:pointer;
+    background:#0b3d91;
+    color:white;
+    padding:12px 25px;
+    border:none;
+    border-radius:5px;
+    cursor:pointer;
 }
 
-#results{
-margin-top:20px;
-padding:20px;
-background:#eef;
+button:hover{
+    background:#1454c4;
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-top:20px;
+    border-radius:10px;
+    box-shadow:0 0 10px rgba(0,0,0,0.15);
+}
+
+footer{
+    background:#0b3d91;
+    color:white;
+    text-align:center;
+    padding:20px;
+    margin-top:40px;
 }
