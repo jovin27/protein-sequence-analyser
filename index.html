@@ -1,29 +1,144 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Protein Sequence Analyzer</title>
+
 <link rel="stylesheet" href="style.css">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
 </head>
 
 <body>
 
-<div class="container">
+<header>
+
+<div class="logo">
+<i class="fas fa-dna"></i>
+<h2>Protein Sequence Analyzer</h2>
+</div>
+
+<nav>
+<a href="#">Home</a>
+<a href="#">Analysis</a>
+<a href="#">Tools</a>
+<a href="#">Documentation</a>
+<a href="#">Contact</a>
+</nav>
+
+</header>
+
+<section class="hero">
+
+<div class="hero-text">
 
 <h1>Protein Sequence Analyzer</h1>
 
-<textarea
-id="sequence"
-placeholder="Paste Protein Sequence Here">
-</textarea>
+<p>
+Analyze protein sequences with advanced
+bioinformatics tools and molecular
+property calculations.
+</p>
 
-<button onclick="analyzeProtein()">
-Analyze Sequence
-</button>
-
-<div id="results"></div>
+<button>Upload FASTA</button>
 
 </div>
+
+<div class="hero-image">
+
+<img src="images/protein.png"
+alt="Protein Structure">
+
+</div>
+
+</section>
+
+<section class="features">
+
+<div class="feature-box">
+<i class="fas fa-file-code"></i>
+<h3>FASTA Parser</h3>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-check-circle"></i>
+<h3>Validation</h3>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-chart-bar"></i>
+<h3>Composition</h3>
+</div>
+
+<div class="feature-box">
+<i class="fas fa-flask"></i>
+<h3>Properties</h3>
+</div>
+
+</section>
+
+<section class="analysis">
+
+<h2>Analyze Your Protein Sequence</h2>
+
+<textarea
+id="sequence"
+placeholder="Paste FASTA Sequence Here">
+</textarea>
+
+<br>
+
+<button
+class="analyze-btn"
+onclick="analyzeProtein()">
+
+Analyze Sequence
+
+</button>
+
+</section>
+
+<section id="results">
+
+<h2>Results Will Appear Here</h2>
+
+</section>
+
+<footer>
+
+<div class="footer-column">
+
+<h3>Protein Analyzer</h3>
+
+<p>
+Bioinformatics Research Portal
+</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Resources</h3>
+
+<p>UniProt</p>
+<p>NCBI</p>
+<p>PDB</p>
+
+</div>
+
+<div class="footer-column">
+
+<h3>Contact</h3>
+
+<p>Email</p>
+<p>LinkedIn</p>
+
+</div>
+
+</footer>
 
 <script src="script.js"></script>
 
