@@ -17,79 +17,127 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
 <header>
 
 <div class="logo">
+
 <i class="fas fa-dna"></i>
+
+<div>
 <h2>Protein Sequence Analyzer</h2>
+<p>Bioinformatics Research Platform</p>
+</div>
+
 </div>
 
 <nav>
-<a href="#">Home</a>
-<a href="#">Analysis</a>
-<a href="#">Tools</a>
-<a href="#">Documentation</a>
-<a href="#">Contact</a>
+
+<a href="#home">Home</a>
+<a href="#analysis">Analysis</a>
+<a href="#features">Features</a>
+<a href="#about">About</a>
+<a href="#contact">Contact</a>
+
 </nav>
 
 </header>
 
-<section class="hero">
+<section id="home" class="hero">
 
-<div class="hero-text">
+<div class="hero-content">
 
-<h1>Protein Sequence Analyzer</h1>
+<h1>
+Advanced Protein Sequence Analysis
+</h1>
 
 <p>
-Analyze protein sequences with advanced
-bioinformatics tools and molecular
-property calculations.
+
+Analyze protein sequences, calculate molecular
+properties, amino acid composition and
+generate professional bioinformatics reports.
+
 </p>
 
-<button>Upload FASTA</button>
+<button onclick="document.getElementById('analysis').scrollIntoView();">
+
+Start Analysis
+
+</button>
 
 </div>
 
 <div class="hero-image">
 
-<img src="protein.jpg"
+<img src="images/protein.png"
 alt="Protein Structure">
 
 </div>
 
 </section>
 
-<section class="features">
+<section id="features" class="features">
 
-<div class="feature-box">
+<h2>Key Features</h2>
+
+<div class="feature-grid">
+
+<div class="feature-card">
+
 <i class="fas fa-file-code"></i>
+
 <h3>FASTA Parser</h3>
+
+<p>
+Automatically reads FASTA formatted sequences.
+</p>
+
 </div>
 
-<div class="feature-box">
-<i class="fas fa-check-circle"></i>
+<div class="feature-card">
+
+<i class="fas fa-shield-alt"></i>
+
 <h3>Validation</h3>
+
+<p>
+Detects invalid amino acid characters.
+</p>
+
 </div>
 
-<div class="feature-box">
+<div class="feature-card">
+
+<i class="fas fa-weight"></i>
+
+<h3>Molecular Weight</h3>
+
+<p>
+Calculate sequence molecular weight.
+</p>
+
+</div>
+
+<div class="feature-card">
+
 <i class="fas fa-chart-bar"></i>
+
 <h3>Composition</h3>
+
+<p>
+Amino acid composition statistics.
+</p>
+
 </div>
 
-<div class="feature-box">
-<i class="fas fa-flask"></i>
-<h3>Properties</h3>
 </div>
 
 </section>
 
-<section class="analysis">
+<section id="analysis" class="analysis-section">
 
-<h2>Analyze Your Protein Sequence</h2>
+<h2>Protein Sequence Analysis</h2>
 
 <textarea
 id="sequence"
-placeholder="Paste FASTA Sequence Here">
+placeholder="Paste Protein FASTA Sequence Here">
 </textarea>
-
-<br>
 
 <button
 class="analyze-btn"
@@ -103,38 +151,62 @@ Analyze Sequence
 
 <section id="results">
 
-<h2>Results Will Appear Here</h2>
+<h2>Analysis Results</h2>
+
+<p>
+Results will appear here after analysis.
+</p>
 
 </section>
 
-<footer>
+<section id="about" class="about">
 
-<div class="footer-column">
+<h2>About This Tool</h2>
+
+<p>
+
+This bioinformatics platform provides
+sequence analysis utilities for proteins,
+including molecular weight estimation,
+composition analysis and FASTA parsing.
+
+</p>
+
+</section>
+
+<footer id="contact">
+
+<div class="footer-section">
 
 <h3>Protein Analyzer</h3>
 
 <p>
-Bioinformatics Research Portal
+Research & Education Platform
 </p>
 
 </div>
 
-<div class="footer-column">
+<div class="footer-section">
 
 <h3>Resources</h3>
 
-<p>UniProt</p>
-<p>NCBI</p>
-<p>PDB</p>
+<ul>
+
+<li>Protein Analysis</li>
+<li>Sequence Statistics</li>
+<li>FASTA Support</li>
+
+</ul>
 
 </div>
 
-<div class="footer-column">
+<div class="footer-section">
 
-<h3>Contact</h3>
+<h3>Developer</h3>
 
-<p>Email</p>
-<p>LinkedIn</p>
+<p>
+Bioinformatics Portfolio Project
+</p>
 
 </div>
 
