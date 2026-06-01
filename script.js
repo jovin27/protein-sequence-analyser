@@ -1,29 +1,21 @@
 function analyzeProtein() {
 
-    // Get sequence from textarea
-    let seq = document.getElementById("sequence").value.toUpperCase();
+    let seq = document.getElementById("sequence")
+        .value
+        .toUpperCase();
 
-    // Remove FASTA headers
+    // Remove FASTA header lines
     seq = seq.replace(/^>.*$/gm, '');
 
-    // Remove spaces, tabs and line breaks
+    // Remove spaces and line breaks
     seq = seq.replace(/\s/g, '');
 
-    // Check if empty
-    if (seq.length === 0) {
-        document.getElementById("results").innerHTML =
-            "<p style='color:red;'>Please enter a protein sequence.</p>";
-        return;
-    }
-
-    // Validate protein sequence
+    // Validate sequence
     if (!/^[ARNDCQEGHILKMFPSTWYV]+$/.test(seq)) {
-        document.getElementById("results").innerHTML =
-            "<p style='color:red;'>Invalid protein sequence detected.</p>";
+        alert("Invalid Protein Sequence");
         return;
     }
 
-    // Amino acid molecular weights
     const aaWeights = {
         A: 89.09,
         R: 174.20,
@@ -47,26 +39,20 @@ function analyzeProtein() {
         V: 117.15
     };
 
-    // Initialize composition counts
+    let length = seq.length;
+    let molecularWeight = 0;
+
     let composition = {};
 
     for (let aa in aaWeights) {
         composition[aa] = 0;
     }
 
-    let molecularWeight = 0;
-
-    // Calculate composition and MW
     for (let aa of seq) {
-
         molecularWeight += aaWeights[aa];
-
         composition[aa]++;
     }
 
-    let length = seq.length;
-
-    // Hydrophobic residues
     let hydrophobic =
         composition["A"] +
         composition["V"] +
@@ -76,55 +62,41 @@ function analyzeProtein() {
         composition["F"] +
         composition["W"];
 
-    // Aromatic residues
     let aromatic =
         composition["F"] +
         composition["W"] +
         composition["Y"];
 
-    // Create output
-    let html = "";
+    let html = `
+        <h2>Analysis Results</h2>
+        <p><strong>Sequence Length:</strong> ${length}</p>
+        <p><strong>Molecular Weight:</strong> ${molecularWeight.toFixed(2)} Da</p>
+        <p><strong>Hydrophobic Residues:</strong> ${hydrophobic}</p>
+        <p><strong>Aromatic Residues:</strong> ${aromatic}</p>
 
-    html += "<h2>Protein Analysis Results</h2>";
-
-    html += "<p><b>Sequence Length:</b> " +
-        length + "</p>";
-
-    html += "<p><b>Molecular Weight:</b> " +
-        molecularWeight.toFixed(2) +
-        " Da</p>";
-
-    html += "<p><b>Hydrophobic Residues:</b> " +
-        hydrophobic + "</p>";
-
-    html += "<p><b>Aromatic Residues:</b> " +
-        aromatic + "</p>";
-
-    html += "<h3>Amino Acid Composition</h3>";
-
-    html += "<table border='1' cellpadding='6' cellspacing='0'>";
-
-    html += "<tr>";
-    html += "<th>Amino Acid</th>";
-    html += "<th>Count</th>";
-    html += "<th>Percentage (%)</th>";
-    html += "</tr>";
+        <h3>Amino Acid Composition</h3>
+        <table border="1" cellpadding="5">
+        <tr>
+            <th>Amino Acid</th>
+            <th>Count</th>
+            <th>Percentage</th>
+        </tr>
+    `;
 
     for (let aa in composition) {
-
         let percent =
-            ((composition[aa] / length) * 100)
-            .toFixed(2);
+            ((composition[aa] / length) * 100).toFixed(2);
 
-        html += "<tr>";
-        html += "<td>" + aa + "</td>";
-        html += "<td>" + composition[aa] + "</td>";
-        html += "<td>" + percent + "%</td>";
-        html += "</tr>";
+        html += `
+            <tr>
+                <td>${aa}</td>
+                <td>${composition[aa]}</td>
+                <td>${percent}%</td>
+            </tr>
+        `;
     }
 
     html += "</table>";
 
-    // Display output
     document.getElementById("results").innerHTML = html;
 }
