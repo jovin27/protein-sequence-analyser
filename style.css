@@ -87,11 +87,9 @@ background:#0055aa;
 }
 
 .hero-image img{
-width:700px;
-height: 400px;
+width:600px;
+height: 220px;
 object-fit: cover;
-border-radius: 10px;
-max-width:100%;
 }
 
 /* Features */
